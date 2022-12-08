@@ -30,6 +30,11 @@ namespace Biblioteket
             return ($"Lånernummer: {laanere[id]._laanerNummer} - Navn: {laanere[id]._navn} er låner hos {_biblioteksNavn}");
         }
 
+        public void OpretLaaner(int laanerNummer, string navn)
+        {
+            laanere.Add(new Laaner(laanerNummer, navn));
+        }
+
         public string HentAlleLaanere()
         {
             string laanereAll = "";
