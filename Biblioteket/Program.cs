@@ -16,17 +16,56 @@ namespace Biblioteket
         public static void Main(string[] args)
         {
 
+            bool boolean = true;
+            string loading = "loading...";
+
+
             Bibliotek biblio = new Bibliotek("Sønderborg Bibliotek");
-            Console.WriteLine(biblio.HentBibliotek());
 
-            biblio.OpretLaaner(1, "Egon");
-            biblio.OpretLaaner(2, "Phillip");
-            biblio.OpretLaaner(3, "Sander");
+            while (boolean == true)
+            {
+                Console.Clear();
+                Console.WriteLine("+ - - - - - - - - - - - - - - - - +");
+                Console.WriteLine("v: Vis bibliotekets navn og dato");
+                Console.WriteLine("o: Opret låner");
+                Console.WriteLine("u: Udskriv lånere");
+                Console.WriteLine("x: Afslut");
+                Console.WriteLine("+ - - - - - - - - - - - - - - - - +");
+                Console.Write("Du kan vælge følgende: ");
 
-            Console.WriteLine(biblio.HentLaaner(0));
-        
+                string input = Console.ReadLine();
+                
+                if (input == "v")
+                {
+                    Console.Clear();
+                    Console.WriteLine(biblio.HentBibliotek());
+                    Console.Write($"{loading}");
+                    Thread.Sleep(5000);
+                    Console.Clear();
+                }
+                if (input == "o")
+                {
+                    Console.Clear();
+                    Console.Write("Indtast venligt lånerenes navn: ");
+                    biblio.OpretLaaner(Console.ReadLine());
+                    Console.Write($"{loading}");
+                    Thread.Sleep(3000);
+                    Console.Clear();
+                }
+                if (input == "u")
+                {
+                    Console.Clear();
+                    Console.WriteLine(biblio.HentAlleLaanere());
+                    Console.Write($"{loading}");
+                    Thread.Sleep(5000);
+                    Console.Clear();
+                }
+                if (input == "x")
+                {
+                    boolean = false;
+                }
+
+            }
         }
-
     }
-
 }
