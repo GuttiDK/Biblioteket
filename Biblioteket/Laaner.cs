@@ -16,7 +16,6 @@ namespace Biblioteket
         public Laaner(int laanerNummer, string navn, string email) : base(navn, email)
         {
             _laanerNummer = laanerNummer;
-
         }
 
     }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,6 +18,7 @@ namespace Biblioteket
 
             bool boolean = true;
             string loading = "Loading...";
+
 
             Bibliotek biblio = new Bibliotek("Sønderborg Bibliotek");
 
