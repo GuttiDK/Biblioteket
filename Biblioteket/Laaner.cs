@@ -8,17 +8,18 @@ using System.Threading.Tasks;
 
 namespace Biblioteket
 {
-    public class Laaner
+
+    internal class Laaner
     {
 
-        public int laanerNummer { get; }
-
-        public string navn { get; }
+        public int _laanerNummer { get; }
+        public string _navn { get; }
 
         public Laaner(int laanerNummer, string navn)
         {
-            this.laanerNummer = laanerNummer;
-            this.navn = navn;
+            _laanerNummer = laanerNummer;
+            _navn = navn;
+
         }
 
     }

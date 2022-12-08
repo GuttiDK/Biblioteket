@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,19 +9,28 @@ using System.Threading.Tasks;
 namespace Biblioteket
 {
 
-    class Bibliotek
+    internal class Bibliotek
     {
 
+
+        string _biblioteksNavn;
         List<Laaner> laanere = new List<Laaner>();
-        public string biblioteksNavn { get; init; }
+
+
         public Bibliotek(string navn)
         {
-            biblioteksNavn = navn;
+            _biblioteksNavn = navn;
         }
 
         public string HentBibliotek()
         {
-            return ($"Velkommen til {biblioteksNavn} - datoen idag er: {DateTime.Now.ToShortDateString()}");
+            return ($"Velkommen til {_biblioteksNavn} - datoen idag er: {DateTime.Now.ToShortDateString()}");
+        }
+
+
+        public string HentLaaner(int id)
+        {
+            return ($"Lånernummer: {laanere[id]._laanerNummer} - Navn: {laanere[id]._navn} er låner hos {_biblioteksNavn}");
         }
 
         public void OpretLaaner(int laanerNummer, string navn)
@@ -29,11 +38,16 @@ namespace Biblioteket
             laanere.Add(new Laaner(laanerNummer, navn));
         }
 
-        public string HentLaaner(int id)
-        {
-            return ($"Lånernummer: {laanere[id].laanerNummer} - Navn: {laanere[id].navn} er låner hos {biblioteksNavn}");
-        }
 
+        public string HentAlleLaanere()
+        {
+            string laanereAll = "";
+            foreach (Laaner laaner in laanere)
+            {
+                laanereAll += $"Lånernummer: {laaner._laanerNummer} - Navn: {laaner._navn} er låner hos {_biblioteksNavn}";
+            }
+            return laanereAll;
+        }
 
     }
 }
