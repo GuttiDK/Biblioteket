@@ -31,9 +31,9 @@ namespace Biblioteket
             return ($"Lånernummer: {laanere[id]._laanerNummer} - Navn: {laanere[id]._navn} er låner hos {_biblioteksNavn}");
         }
 
-        public void OpretLaaner(string navn)
+        public void OpretLaaner(string navn, string email)
         {
-            laanere.Add(new Laaner(laanNum++, navn));
+            laanere.Add(new Laaner(++laanNum, navn, email));
         }
 
         public string HentAlleLaanere()
@@ -41,7 +41,7 @@ namespace Biblioteket
             string laanereAll = "";
             foreach (Laaner laaner in laanere)
             {
-                laanereAll += $"Lånernummer: {laaner._laanerNummer} - Navn: {laaner._navn} er låner hos {_biblioteksNavn}";
+                laanereAll += $"Lånernummer: {laaner._laanerNummer} - Navn: {laaner._navn} | Email: {laaner._email} - Låner hos {_biblioteksNavn}\n";
             }
             return laanereAll;
         }

@@ -17,7 +17,7 @@ namespace Biblioteket
         {
 
             bool boolean = true;
-            string loading = "loading...";
+            string loading = "Loading...";
 
             Bibliotek biblio = new Bibliotek("Sønderborg Bibliotek");
 
@@ -46,7 +46,9 @@ namespace Biblioteket
                 {
                     Console.Clear();
                     Console.Write("Indtast venligt lånerenes navn: ");
-                    biblio.OpretLaaner(Console.ReadLine());
+                    string navn = Console.ReadLine();
+                    Console.Write("Indtast email: ");
+                    biblio.OpretLaaner(navn, Console.ReadLine());
                     Console.Write($"{loading}");
                     Thread.Sleep(3000);
                     Console.Clear();
