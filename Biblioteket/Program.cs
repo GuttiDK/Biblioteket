@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,8 +18,6 @@ namespace Biblioteket
 
             Bibliotek biblio = new Bibliotek("Sønderborg Bibliotek");
             Console.WriteLine(biblio.HentBibliotek());
-
-
 
             biblio.OpretLaaner(1, "Egon");
             biblio.OpretLaaner(2, "Phillip");
