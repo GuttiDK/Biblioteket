@@ -19,6 +19,7 @@ namespace Biblioteket
         {
             _laanerNummer = laanerNummer;
             _navn = navn;
+
         }
 
     }
