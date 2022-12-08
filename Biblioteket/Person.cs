@@ -8,15 +8,18 @@ using System.Threading.Tasks;
 
 namespace Biblioteket
 {
-
-    internal class Laaner : Person
+    internal class Person
     {
-        public int _laanerNummer { get; }
 
-        public Laaner(int laanerNummer, string navn, string email) : base(navn, email)
+        public string _navn { get; }
+        public string _email { get; set; }
+
+        public Person(string navn, string email)
         {
-            _laanerNummer = laanerNummer;
+            _navn = navn;
+            _email = email;
         }
 
     }
+
 }
