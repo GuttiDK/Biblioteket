@@ -13,6 +13,7 @@ namespace Biblioteket
     {
 
         string _biblioteksNavn;
+        int laanNum = 0;
         List<Laaner> laanere = new List<Laaner>();
 
         public Bibliotek(string navn)
@@ -30,9 +31,9 @@ namespace Biblioteket
             return ($"Lånernummer: {laanere[id]._laanerNummer} - Navn: {laanere[id]._navn} er låner hos {_biblioteksNavn}");
         }
 
-        public void OpretLaaner(int laanerNummer, string navn)
+        public void OpretLaaner(string navn)
         {
-            laanere.Add(new Laaner(laanerNummer, navn));
+            laanere.Add(new Laaner(laanNum++, navn));
         }
 
         public string HentAlleLaanere()
