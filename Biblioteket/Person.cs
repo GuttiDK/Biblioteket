@@ -10,10 +10,11 @@ namespace Biblioteket
 {
     internal class Person
     {
-
+        // Sætter og laver read på de infomationer man får fra program
         public string _navn { get; }
         public string _email { get; set; }
 
+        // Gemmer den værdi du har inputtet
         public Person(string navn, string email)
         {
             _navn = navn;

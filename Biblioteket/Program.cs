@@ -15,15 +15,17 @@ namespace Biblioteket
 
         public static void Main(string[] args)
         {
-
+            // Options
             bool boolean = true;
             string loading = "Loading...";
 
-
+            // Sætter biblio navnet
             Bibliotek biblio = new Bibliotek("Sønderborg Bibliotek");
 
+            // While loop til at boolean er false
             while (boolean == true)
             {
+                // Menu
                 Console.Clear();
                 Console.WriteLine("+ - - - - - - - - - - - - - - - - +");
                 Console.WriteLine("v: Vis bibliotekets navn og dato");
@@ -35,6 +37,7 @@ namespace Biblioteket
 
                 string input = Console.ReadLine();
                 
+                // Input valg ud fra menu
                 if (input == "v")
                 {
                     Console.Clear();
